@@ -19,9 +19,10 @@ public class NotaFiscal {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notaFiscal")
+	@Column(name = "cd_cliente")
 	private int cd_nota;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name ="dt_nota", nullable = false)
 	private Calendar dt_nota;
 	

@@ -21,6 +21,7 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
+	@Column(name = "cd_cliente")
 	private int cd_cliente;
 	
 	@Column(name ="nm_cliente", nullable = false, length = 80)

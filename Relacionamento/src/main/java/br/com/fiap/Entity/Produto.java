@@ -24,7 +24,7 @@ public class Produto {
 	@Column(name = "vl_produto", nullable = false, precision = 10, scale = 2 )
 	private double valorProduto;
 	
-	@Column(name = "qntd_estoque")
+	@Column(name = "qntd_estoque", length = 5)
 	private int qntdEstoque;
 	
 	public Produto() {

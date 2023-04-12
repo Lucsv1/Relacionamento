@@ -19,6 +19,7 @@ public class Pedido {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pedido")
+	@Column(name = "cd_cliente")
 	private int cd_pedido;
 	
 	@Temporal(TemporalType.DATE)
