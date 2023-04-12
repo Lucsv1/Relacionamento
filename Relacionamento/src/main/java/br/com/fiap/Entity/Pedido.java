@@ -28,5 +28,42 @@ public class Pedido {
 	@Column(name ="vl_pedido", nullable = false, precision = 5, scale = 2 )
 	private double vl_pedido;
 	
+	public Pedido() {
+		
+	}
+
+	public Pedido(int cd_pedido, Calendar dt_pedido, double vl_pedido) {
+		super();
+		this.cd_pedido = cd_pedido;
+		this.dt_pedido = dt_pedido;
+		this.vl_pedido = vl_pedido;
+	}
+
+	public int getCd_pedido() {
+		return cd_pedido;
+	}
+
+	public void setCd_pedido(int cd_pedido) {
+		this.cd_pedido = cd_pedido;
+	}
+
+	public Calendar getDt_pedido() {
+		return dt_pedido;
+	}
+
+	public void setDt_pedido(Calendar dt_pedido) {
+		this.dt_pedido = dt_pedido;
+	}
+
+	public double getVl_pedido() {
+		return vl_pedido;
+	}
+
+	public void setVl_pedido(double vl_pedido) {
+		this.vl_pedido = vl_pedido;
+	}
+	
+	
+	
 
 }

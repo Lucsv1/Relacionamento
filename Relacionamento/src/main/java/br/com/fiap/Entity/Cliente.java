@@ -30,5 +30,42 @@ public class Cliente {
 	@Column(name ="dt_nascimento")
 	private Calendar dt_nascimento;
 	
+	public Cliente() {
+		
+	}
+
+	public Cliente(int cd_cliente, String nm_cliente, Calendar dt_nascimento) {
+		super();
+		this.cd_cliente = cd_cliente;
+		this.nm_cliente = nm_cliente;
+		this.dt_nascimento = dt_nascimento;
+	}
+	
+
+	public int getCd_cliente() {
+		return cd_cliente;
+	}
+
+	public void setCd_cliente(int cd_cliente) {
+		this.cd_cliente = cd_cliente;
+	}
+
+	public String getNm_cliente() {
+		return nm_cliente;
+	}
+
+	public void setNm_cliente(String nm_cliente) {
+		this.nm_cliente = nm_cliente;
+	}
+
+	public Calendar getDt_nascimento() {
+		return dt_nascimento;
+	}
+
+	public void setDt_nascimento(Calendar dt_nascimento) {
+		this.dt_nascimento = dt_nascimento;
+	}
+	
+	
 
 }

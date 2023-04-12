@@ -27,5 +27,42 @@ public class NotaFiscal {
 	
 	@Column(name = "vl_nota", nullable = false, precision = 10, scale = 2)
 	private double vl_nota;
+	
+	public NotaFiscal () {
+		
+	}
+
+	public NotaFiscal(int cd_nota, Calendar dt_nota, double vl_nota) {
+		super();
+		this.cd_nota = cd_nota;
+		this.dt_nota = dt_nota;
+		this.vl_nota = vl_nota;
+	}
+
+	public int getCd_nota() {
+		return cd_nota;
+	}
+
+	public void setCd_nota(int cd_nota) {
+		this.cd_nota = cd_nota;
+	}
+
+	public Calendar getDt_nota() {
+		return dt_nota;
+	}
+
+	public void setDt_nota(Calendar dt_nota) {
+		this.dt_nota = dt_nota;
+	}
+
+	public double getVl_nota() {
+		return vl_nota;
+	}
+
+	public void setVl_nota(double vl_nota) {
+		this.vl_nota = vl_nota;
+	}
+	
+	
 
 }
