@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,8 +26,11 @@ public class Produto {
 	@Column(name = "vl_produto", nullable = false, precision = 10, scale = 2 )
 	private double valorProduto;
 	
-	@Column(name = "qntd_estoque", length = 5)
+	@Column(name = "qntd_estoque", precision =  5)
 	private int qntdEstoque;
+	
+	@OneToOne
+	private Pedido pedido;
 	
 	public Produto() {
 		

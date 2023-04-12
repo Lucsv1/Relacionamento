@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -19,7 +21,7 @@ public class NotaFiscal {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notaFiscal")
-	@Column(name = "cd_cliente")
+	@Column(name = "cd_nota")
 	private int cd_nota;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -28,6 +30,11 @@ public class NotaFiscal {
 	
 	@Column(name = "vl_nota", nullable = false, precision = 10, scale = 2)
 	private double vl_nota;
+	
+	@OneToOne
+	@JoinColumn(name = "cd_pedido", nullable = false)
+	private Pedido pedido;
+	
 	
 	public NotaFiscal () {
 		
@@ -38,6 +45,15 @@ public class NotaFiscal {
 		this.cd_nota = cd_nota;
 		this.dt_nota = dt_nota;
 		this.vl_nota = vl_nota;
+	}
+	
+	
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
 
 	public int getCd_nota() {
