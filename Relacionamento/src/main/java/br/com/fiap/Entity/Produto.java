@@ -29,9 +29,6 @@ public class Produto {
 	@Column(name = "qntd_estoque", precision =  5)
 	private int qntdEstoque;
 	
-	@OneToOne
-	private Pedido pedido;
-	
 	public Produto() {
 		
 	}

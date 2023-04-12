@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -22,20 +24,21 @@ public class Pedido {
 	@Column(name = "cd_cliente")
 	private int cd_pedido;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "dt_pedido", nullable = false)
 	private Calendar dt_pedido;
 	
 	@Column(name ="vl_pedido", nullable = false, precision = 5, scale = 2 )
 	private double vl_pedido;
 	
+	@OneToOne(mappedBy = "pedido")
+	private NotaFiscal nota;
+	
 	public Pedido() {
 		
 	}
 
-	public Pedido(int cd_pedido, Calendar dt_pedido, double vl_pedido) {
-		super();
-		this.cd_pedido = cd_pedido;
+	public Pedido( Calendar dt_pedido, double vl_pedido) {
 		this.dt_pedido = dt_pedido;
 		this.vl_pedido = vl_pedido;
 	}

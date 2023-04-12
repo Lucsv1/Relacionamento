@@ -40,9 +40,7 @@ public class NotaFiscal {
 		
 	}
 
-	public NotaFiscal(int cd_nota, Calendar dt_nota, double vl_nota) {
-		super();
-		this.cd_nota = cd_nota;
+	public NotaFiscal( Calendar dt_nota, double vl_nota) {
 		this.dt_nota = dt_nota;
 		this.vl_nota = vl_nota;
 	}
