@@ -25,11 +25,13 @@
 			
 			<!-- Usuário do banco, rmxxxxxx -->
 			
-			<property name="" value=""/>		
+			<property name="javax.persistence.jdbc.user" value="pf0392"/>
+			<property name="javax.persistence.jdbc.password" value="fiap"/>
+			
+			<!-- Senha do banco, data de nascimento com 6 digitos -->
+			
 			<!-- URL do banco -->
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl"/>
-			<property name="javax.persistence.jdbc.user" value="RM95177"/>
-			<property name="javax.persistence.jdbc.password" value="210104"/>
 		</properties>	
 	</persistence-unit>
 </persistence>

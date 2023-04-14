@@ -40,7 +40,8 @@ public class NotaFiscal {
 		
 	}
 
-	public NotaFiscal( Calendar dt_nota, double vl_nota) {
+	public NotaFiscal( Calendar dt_nota, double vl_nota, Pedido pedido) {
+		this.pedido = pedido;
 		this.dt_nota = dt_nota;
 		this.vl_nota = vl_nota;
 	}

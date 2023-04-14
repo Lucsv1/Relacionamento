@@ -32,7 +32,8 @@ public class PedidoView {
 		
 		NotaFiscalDao notaFiscalDao = new NotaFiscalDaoImpl(ent);
 		
-		NotaFiscal notaFiscal = new NotaFiscal( Calendar.getInstance(), 239.99);
+		NotaFiscal notaFiscal = new NotaFiscal( Calendar.getInstance(), 239.99, pedido);
+		
 		notaFiscalDao.salvar(notaFiscal);
 		try {
 			notaFiscalDao.commit();
