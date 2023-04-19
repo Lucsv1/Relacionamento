@@ -1,12 +1,12 @@
 package br.com.fiap.Entity;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,8 +15,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.Generated;
 
 @Entity
 @Table(name="TB_CLIENTE")
@@ -36,17 +34,22 @@ public class Cliente {
 	private Calendar dt_nascimento;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-	private List<Pedido> pedidos;
+	private List<Pedido> pedidos = new ArrayList<Pedido>();
+	
+	public void addPedido(Pedido pedidoNovo) {
+		pedidoNovo.setCliente(this);
+		this.pedidos.add(pedidoNovo);
+	}
 	
 	public Cliente() {
 		
 	}
 
-	public Cliente(int cd_cliente, String nm_cliente, Calendar dt_nascimento) {
+	public Cliente( String nm_cliente, Calendar dt_nascimento, List<Pedido> pedidos ) {
 		super();
-		this.cd_cliente = cd_cliente;
 		this.nm_cliente = nm_cliente;
 		this.dt_nascimento = dt_nascimento;
+		this.pedidos = (List<Pedido>) pedidos;
 	}
 	
 

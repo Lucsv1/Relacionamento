@@ -8,7 +8,7 @@ import br.com.fiap.jpa.dao.GenericDaoImpl;
 public class ClienteDaoImpl extends GenericDaoImpl<Cliente, Integer> implements ClienteDao  {
 	
 	public ClienteDaoImpl(EntityManager ent) {
-		super(ent)
+		super(ent);
 	}
 
 }

@@ -39,6 +39,22 @@ public class Pedido {
 	@JoinColumn(name = "cd_cliente", nullable = false)
 	private Cliente cliente;
 	
+	public NotaFiscal getNota() {
+		return nota;
+	}
+
+	public void setNota(NotaFiscal nota) {
+		this.nota = nota;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Pedido() {
 		
 	}
