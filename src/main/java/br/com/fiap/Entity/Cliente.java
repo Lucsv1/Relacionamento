@@ -35,7 +35,7 @@ public class Cliente {
 	@Column(name ="dt_nascimento")
 	private Calendar dt_nascimento;
 	
-	@OneToMany(mappedBy = "cliente")
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	private List<Pedido> pedidos;
 	
 	public Cliente() {
