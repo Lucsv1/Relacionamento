@@ -1,12 +1,16 @@
 package br.com.fiap.Entity;
 
 import java.util.Calendar;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -30,6 +34,9 @@ public class Cliente {
 	@Temporal(TemporalType.DATE)
 	@Column(name ="dt_nascimento")
 	private Calendar dt_nascimento;
+	
+	@OneToMany(mappedBy = "cliente")
+	private List<Pedido> pedidos;
 	
 	public Cliente() {
 		
